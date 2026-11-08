@@ -1,0 +1,81 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+             xmlns:vm="using:WestcoastEducation.Desktop.ViewModels"
+
+             xmlns:m="using:WestcoastEducation.Desktop.Models"
+
+             x:Class="WestcoastEducation.Desktop.Views.StudentsView"
+
+             x:DataType="vm:StudentsViewModel">
+ 
+  <Grid ColumnDefinitions="*,360">
+ 
+    <!-- Left: list of students -->
+<Border Classes="card" Grid.Column="0" Margin="0,0,16,0">
+<DockPanel>
+<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="12" Margin="0,0,0,8">
+<TextBlock Classes="heading" Text="Students" Margin="0" VerticalAlignment="Center" />
+<Button Content="Refresh" Command="{Binding LoadCommand}" />
+</StackPanel>
+ 
+        <TextBlock DockPanel.Dock="Bottom" Classes="muted" Text="{Binding Message}"
+
+                   TextWrapping="Wrap" Margin="0,8,0,0" />
+ 
+        <ListBox ItemsSource="{Binding Students}">
+<ListBox.ItemTemplate>
+<DataTemplate x:DataType="m:Student">
+<StackPanel Spacing="2" Margin="0,4">
+<TextBlock FontWeight="SemiBold" Text="{Binding FullName}" />
+<TextBlock Classes="muted">
+<Run Text="{Binding PersonalIdentityNumber}" />
+<Run Text=" | tel " />
+<Run Text="{Binding PhoneNumber}" />
+</TextBlock>
+<TextBlock Classes="muted" Text="{Binding Address}" />
+</StackPanel>
+</DataTemplate>
+</ListBox.ItemTemplate>
+</ListBox>
+</DockPanel>
+</Border>
+ 
+    <!-- Right: form for adding a student -->
+<Border Classes="card" Grid.Column="1">
+<ScrollViewer>
+<StackPanel Spacing="6">
+<TextBlock Classes="heading" Text="New student" />
+ 
+          <TextBlock Text="First name" />
+<TextBox Text="{Binding FirstName}" />
+ 
+          <TextBlock Text="Last name" />
+<TextBox Text="{Binding LastName}" />
+ 
+          <TextBlock Text="Personal identity number" />
+<TextBox Text="{Binding PersonalIdentityNumber}" PlaceholderText="YYYYMMDD-XXXX" />
+ 
+          <TextBlock Text="Telephone number" />
+<TextBox Text="{Binding PhoneNumber}" />
+ 
+          <TextBlock Text="Street address" />
+<TextBox Text="{Binding Street}" />
+ 
+          <TextBlock Text="Postal code" />
+<TextBox Text="{Binding PostalCode}" />
+ 
+          <TextBlock Text="Town/City" />
+<TextBox Text="{Binding City}" />
+ 
+          <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,12,0,0">
+<Button Classes="primary" Content="Add student" Command="{Binding AddCommand}" />
+<Button Content="Clear" Command="{Binding ClearFormCommand}" />
+</StackPanel>
+</StackPanel>
+</ScrollViewer>
+</Border>
+ 
+  </Grid>
+</UserControl>

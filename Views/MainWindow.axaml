@@ -19,11 +19,18 @@
   <DockPanel Margin="{DynamicResource PagePadding}">
 <TextBlock DockPanel.Dock="Top" Classes="heading" Text="Westcoast Education" />
  
-    <TabControl>
+  <TabControl>
 <TabItem Header="Courses">
 <views:CoursesView DataContext="{Binding Courses}" Margin="0,12,0,0" />
 </TabItem>
+<TabItem Header="Students">
+<views:StudentsView DataContext="{Binding Students}" Margin="0,12,0,0" />
+</TabItem>
+<TabItem Header="Teachers">
+<views:TeachersView DataContext="{Binding Teachers}" Margin="0,12,0,0" />
+</TabItem>
 </TabControl>
+ 
 </DockPanel>
  
 </Window>

@@ -17,8 +17,6 @@ public partial class CoursesViewModel : ViewModelBase
     private readonly IRestDbService<Course> _courseService;
 
     private readonly IRestDbService<Teacher> _teacherService;
- 
-    // The services come from Dependency Injection
 
     public CoursesViewModel(IRestDbService<Course> courseService, IRestDbService<Teacher> teacherService)
 
@@ -37,8 +35,6 @@ public partial class CoursesViewModel : ViewModelBase
     public ObservableCollection<string> TeacherNames { get; } = new();
 
     public string[] DurationUnits { get; } = { "Weeks", "Days" };
- 
-    // The course clicked in the list (null = adding a new course)
 
     [ObservableProperty]
 
@@ -48,8 +44,6 @@ public partial class CoursesViewModel : ViewModelBase
 
     private Course? _selectedCourse;
  
-    // Form fields
-
     [ObservableProperty] private string _courseNumber = "";
 
     [ObservableProperty] private string _title = "";
@@ -73,8 +67,7 @@ public partial class CoursesViewModel : ViewModelBase
     public string SaveButtonText => IsEditing ? "Update course" : "Add course";
 
     public string FormHeading => IsEditing ? "Edit course" : "New course";
- 
-    // Runs automatically when a course is clicked in the list
+
 
     partial void OnSelectedCourseChanged(Course? value)
 
@@ -136,6 +129,9 @@ public partial class CoursesViewModel : ViewModelBase
 
             }
  
+
+            var chosenTeacher = Teacher;
+ 
             TeacherNames.Clear();
 
             foreach (var teacher in teachers)
@@ -146,6 +142,8 @@ public partial class CoursesViewModel : ViewModelBase
 
             }
  
+            Teacher = chosenTeacher;
+  
             Message = $"{Courses.Count} course(s) loaded.";
 
         }
@@ -171,8 +169,6 @@ public partial class CoursesViewModel : ViewModelBase
         ClearForm();
 
     }
- 
-    // Adds a new course, or updates the selected one (VG)
 
     [RelayCommand]
 

@@ -25,8 +25,6 @@ public class Course : IEntity
     public DateTime EndDate { get; set; } = DateTime.Today;
 
     public bool IsDistance { get; set; }
- 
-    // Name of the teacher responsible for the course
 
     public string Teacher { get; set; } = "";
  

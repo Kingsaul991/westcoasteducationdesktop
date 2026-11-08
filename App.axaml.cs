@@ -74,9 +74,10 @@ public partial class App : Application
 
             new RestDbService<Teacher>(sp.GetRequiredService<HttpClient>(), "teachers"));
  
-
-        services.AddTransient<MainViewModel>();
         services.AddTransient<CoursesViewModel>();
+        services.AddTransient<StudentsViewModel>();
+        services.AddTransient<TeachersViewModel>();
+        services.AddTransient<MainViewModel>();
  
         return services.BuildServiceProvider();
 
