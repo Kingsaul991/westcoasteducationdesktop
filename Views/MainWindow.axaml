@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+        xmlns:vm="using:WestcoastEducation.Desktop.ViewModels"
+
+        xmlns:views="using:WestcoastEducation.Desktop.Views"
+
+        x:Class="WestcoastEducation.Desktop.Views.MainWindow"
+
+        x:DataType="vm:MainViewModel"
+
+        Title="Westcoast Education"
+
+        Width="1100" Height="700"
+
+        Background="{DynamicResource BackgroundBrush}">
+ 
+  <DockPanel Margin="{DynamicResource PagePadding}">
+<TextBlock DockPanel.Dock="Top" Classes="heading" Text="Westcoast Education" />
+ 
+    <TabControl>
+<TabItem Header="Courses">
+<views:CoursesView DataContext="{Binding Courses}" Margin="0,12,0,0" />
+</TabItem>
+</TabControl>
+</DockPanel>
+ 
+</Window>

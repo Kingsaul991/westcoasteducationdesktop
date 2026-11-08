@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ 
+  <!-- Color scheme: change a value here and the whole app updates -->
+<SolidColorBrush x:Key="PrimaryBrush" Color="#1E5A8A" />
+<SolidColorBrush x:Key="PrimaryHoverBrush" Color="#2771AB" />
+<SolidColorBrush x:Key="DangerBrush" Color="#C0392B" />
+<SolidColorBrush x:Key="DangerHoverBrush" Color="#D9534F" />
+<SolidColorBrush x:Key="BackgroundBrush" Color="#F4F6F9" />
+<SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF" />
+<SolidColorBrush x:Key="BorderBrush" Color="#DDE3EA" />
+<SolidColorBrush x:Key="TextBrush" Color="#1F2933" />
+<SolidColorBrush x:Key="MutedTextBrush" Color="#6B7785" />
+<SolidColorBrush x:Key="OnPrimaryBrush" Color="#FFFFFF" />
+ 
+  <!-- Sizes and spacing -->
+<x:Double x:Key="HeadingFontSize">22</x:Double>
+<CornerRadius x:Key="CardCornerRadius">8</CornerRadius>
+<Thickness x:Key="PagePadding">20</Thickness>
+ 
+</ResourceDictionary>

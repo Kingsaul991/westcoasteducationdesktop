@@ -1,0 +1,47 @@
+<Styles xmlns="https://github.com/avaloniaui"
+
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ 
+  <!-- Page headings: <TextBlock Classes="heading" /> -->
+<Style Selector="TextBlock.heading">
+<Setter Property="FontSize" Value="{DynamicResource HeadingFontSize}" />
+<Setter Property="FontWeight" Value="SemiBold" />
+<Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
+<Setter Property="Margin" Value="0,0,0,12" />
+</Style>
+ 
+  <!-- Smaller grey text: <TextBlock Classes="muted" /> -->
+<Style Selector="TextBlock.muted">
+<Setter Property="Foreground" Value="{DynamicResource MutedTextBrush}" />
+</Style>
+ 
+  <!-- White boxes with a border: <Border Classes="card" /> -->
+<Style Selector="Border.card">
+<Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+<Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+<Setter Property="BorderThickness" Value="1" />
+<Setter Property="CornerRadius" Value="{DynamicResource CardCornerRadius}" />
+<Setter Property="Padding" Value="16" />
+</Style>
+ 
+  <!-- Main action buttons: <Button Classes="primary" /> -->
+<Style Selector="Button.primary">
+<Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+<Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
+</Style>
+<Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+<Setter Property="Background" Value="{DynamicResource PrimaryHoverBrush}" />
+<Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
+</Style>
+ 
+  <!-- Delete buttons: <Button Classes="danger" /> -->
+<Style Selector="Button.danger">
+<Setter Property="Background" Value="{DynamicResource DangerBrush}" />
+<Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
+</Style>
+<Style Selector="Button.danger:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+<Setter Property="Background" Value="{DynamicResource DangerHoverBrush}" />
+<Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
+</Style>
+ 
+</Styles>
